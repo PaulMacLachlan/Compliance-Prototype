@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Audit information for {{audit.title}} {{audit.year}}</h1>
+
+  <h3>We provide satisfactory protection and security that meets or exceeds all {{audit.title}} {{audit.year}} standards.</h3>
+
+  <ul>
+    <li>For this, we do this.</li>
+    <li>For that, we do that.</li>
+    <li>For the other thing, we do these things.</li>
+  </ul>
+
+  <h3>We provided the following evidence to demonstrate these claims:</h3>
+
+  <ul>
+    <li>For this claim, we provided this evidence.</li>
+    <li>For that claim, we provided that evidence.</li>
+    <li>For that other claim, we provided that other evidence.</li>
+  </ul>
+
+    <form method="POST" action="{{url_for('edit', id=audit.id)}}?_method=PATCH">
+      <input type="submit" value="Edit this Audit">
+    </form>
+
+    <form method="POST" action="{{url_for('show', id=audit.id)}}?_method=DELETE">
+      <input type="submit" value="Delete this Audit">
+    </form>
+
+{% endblock %}

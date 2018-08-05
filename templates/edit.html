@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h1>Edit this Audit</h1>
+  <form method="POST" action="{{url_for('show', id=audit.id)}}?_method=PATCH">
+    <input type="text" name="title" value="{{audit.title}}">
+    <input type="text" name="year" value="{{audit.year}}">
+    <input type="submit" value="Submit">
+  </form>
+
+{% endblock %}
