@@ -5,7 +5,11 @@ from flask_modus import Modus
 app = Flask(__name__)
 modus = Modus(app)
 
-audits = [Audit('FedRAMP', '2018')]
+audits = [Audit('FedRAMP', '2017'),
+    Audit('HIPPA', '2017'),
+    Audit('PCI', '2017'),
+    Audit('GDPR', '2017')
+    ]
 
 def find_audit(audit_id):
     return [audit for audit in audits if audit.id == audit_id][0]
@@ -21,6 +25,14 @@ def index():
         audits.append(new_audit)
         return redirect(url_for('index'))
     return render_template('index.html', audits=audits)
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/request_access')
+def request_access():
+    return render_template('request_access.html')
 
 @app.route('/audits/new')
 def new():

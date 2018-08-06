@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>We support the following Audits:</h1>
+<h1>{% block title %}Welcome to the Compliance Portal{% endblock %}</h1>
+
+<h3>As of <script> document.write(new Date().toLocaleDateString()); </script>, we are fully compliant with the following regulations:</h3>
 
 {% for audit in audits %}
   <p>
