@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+  <h3>Please Login</h3>
+  <br>
+  <form action="" method="POST">
+    <input type="text" placeholder="Username" name="username" value="{{ request.form.username}}">
+    <input type="password" placeholder="Password" name="password" value="{{request.form.password }}">
+    <br>
+    <input class="btn btn-default" style="color: white; background-color: #1d1e22; border: 2px lightgrey" color="green" type="submit" value="Login">
+  </form>
+</div>
+
+{% endblock %}
